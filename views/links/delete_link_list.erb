@@ -1,0 +1,17 @@
+<h1>Links</h1>
+
+<table>
+  <tr>
+    <th>LINK URL</th>
+    <th>RELATIVE ASSIGNMENT</th>
+  </tr>
+  <% Link.all.each do |link| %>
+    <tr>
+      <th><a href="/delete_link/<%= link.id %>"><%= link.link %></a></th>
+      <th><%= Assignment.find(link.relative_assignment).general_info %></th>
+    <tr>
+  <% end %>
+</table>
+
+
+<p><a href="/home">Home Page</a></p>

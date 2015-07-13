@@ -1,0 +1,28 @@
+<form action ="/save_link">
+  <input type="text" placeholder="Link URL" name="link[link_url]" value="<%= params["link_url"] %>">
+  <input type="text" placeholder="Relative Assignment" name="link[relative_assignment]" value="<%= params["relative_assignment"] %>">
+  <input type="submit">
+</form>
+
+
+<h1>Assignments</h1>
+
+<table>
+  <tr>
+    <th>ID</th>
+    <th>GENERAL INFO</th>
+    <th>GITHUB LINK</th>
+    <th>CO WORKERS</th>
+  </tr>
+  <% Assignment.all.each do |assignment| %>
+    <tr></tr>
+      <th><%= assignment.id %></th>
+      <th><%= assignment.general_info %></th>
+      <th><%= assignment.github_link %></th>
+      <th><%= assignment.co_workers %></th>
+    <tr></tr>
+  <% end %>
+</table>
+
+
+<p><a href="/home">Home Page</a></p>

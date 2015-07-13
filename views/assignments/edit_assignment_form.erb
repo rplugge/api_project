@@ -1,0 +1,14 @@
+<h1> What would you like to edit about this assignment? </h1>
+
+
+<form action="/change_assignment/<%= params["id"] %>">
+  <select name="edit_choice">
+      <option value="general_info">General Info</option>
+      <option value="github_link">Github Link</option>
+      <option value="co_workers">Co-Workers</option>
+  </select>
+
+  <input type="text" name="new_input" placeholder="New Input">
+  
+  <input type="submit">
+</form> 

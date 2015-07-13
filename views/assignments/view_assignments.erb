@@ -1,0 +1,19 @@
+<h1>Assignments</h1>
+
+<table>
+  <tr>
+    <th>GENERAL INFO</th>
+    <th>GITHUB LINK</th>
+    <th>CO WORKERS</th>
+  </tr>
+  <% Assignment.all.each do |assignment| %>
+    <tr>
+      <th><%= assignment.general_info %></th>
+      <th><%= assignment.github_link %></th>
+      <th><%= assignment.co_workers %></th>
+    <tr>
+  <% end %>
+</table>
+
+
+<p><a href="/home">Home Page</a></p>

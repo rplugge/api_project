@@ -1,0 +1,18 @@
+<h1>Which assignment would you like to delete?</h1>
+
+<table>
+  <tr>
+    <th>ID</th>
+    <th>GENERAL INFO</th>
+    <th>GITHUB LINK</th>
+    <th>CO-WORKERS</th>
+  </tr>
+  <% Assignment.all.each do |assignment| %>
+    <tr>
+      <td><%= assignment.id %></td>
+      <td><a href="/delete_assignment/<%= assignment.id %>"><%= assignment.general_info %></a></td>
+      <td><%= assignment.github_link %></td>
+      <td><%= assignment.co_workers %></td>
+    </tr>
+  <% end %>
+</table>
