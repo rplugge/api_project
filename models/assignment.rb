@@ -30,4 +30,10 @@ class Assignment
     
     return self
   end
+  
+  def object_as_hash
+    hash = {"id" => self.id, "general_info" => self.general_info, "github_link" => self.github_link, "co_workers" => self.co_workers}
+    
+    return hash
+  end
 end
