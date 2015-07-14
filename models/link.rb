@@ -29,4 +29,10 @@ class Link
     
     return self
   end
+  
+  def object_as_hash
+    hash = {"id" => self.id, "link_url" => self.link, "relative_assignment" => self.relative_assignment}
+    
+    return hash
+  end
 end
