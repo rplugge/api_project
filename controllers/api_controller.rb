@@ -38,7 +38,32 @@ get "/api/links" do
   json link_hash
 end
 
-get "/api/add_assignment/:general_info/:github_link/:co_workers" do
+get "/api/add_assignment" do
   assignment = Assignment.new({"general_info" => params["general_info"], "github_link" => params["github_link"], "co_workers" => params["co_workers"]})
-  binding.pry
+  assignment.add_to_database
+  assignment = assignment.object_as_hash
+  
+  json assignment
+end
+
+get "/api/add_link" do
+  link = Link.new({"link" => params["link"], "relative_assignment" => params["relative_assignment"].to_i})
+  link.add_to_database
+  link = link.object_as_hash
+  
+  json link
+end
+
+get "/api/delete_link/:id" do
+  link = Link.find(params["id"])
+  link.delete
+  
+  return "Deleted!"
+end
+
+get "/api/delete_assignment/:id" do
+  assignment = Assignment.find(params["id"])
+  assignment.delete
+  
+  return "Deleted!"
 end
